@@ -3,10 +3,11 @@ from playsound import playsound
 from os import path
 from time import sleep
 from decimal import Decimal
-# This is a sample Python script.
+
 
 NUMBER_PATH = "./number_mpegs"
 number_files = dict()
+
 
 def download_number(number, number_files: dict, path_to_files: str):
     num = str(number)
@@ -22,11 +23,12 @@ def download_number(number, number_files: dict, path_to_files: str):
         number_files[num] = new_path
         return new_path
 
+
 def play_number(number):
     p = download_number(number, number_files, NUMBER_PATH)
     playsound(p)
 
-# Press the green button in the gutter to run the script.
+
 if __name__ == '__main__':
     # load from 9 to 15 increments of 0.1
     for i in range(90, 151):
