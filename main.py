@@ -1,6 +1,8 @@
 import requests
 from playsound import playsound
 from os import path
+from time import sleep
+from decimal import Decimal
 # This is a sample Python script.
 
 NUMBER_PATH = "./number_mpegs"
@@ -26,5 +28,12 @@ def play_number(number):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    play_number(10)
+    # load from 9 to 15 increments of 0.1
+    for i in range(90, 151):
+        new_num = round(Decimal(i) * Decimal(0.1),1)
+        play_number(new_num)
+        print(new_num)
+        sleep(1)
+
+
 
